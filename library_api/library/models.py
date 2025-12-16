@@ -13,7 +13,7 @@ class Book(models.Model):
     def __str_(self):
         return self.title
     
-class checkout(models.Model):
+class Checkout(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     checkout_date = models.DateTimeField(auto_now_add=True)
