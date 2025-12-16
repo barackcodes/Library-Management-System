@@ -21,4 +21,4 @@ class checkout(models.Model):
     status = models.CharField(max_length=50, default="Borrowed")
     
     def __str__(self):
-        return f"self.user.username"
+        return f"{self.user} -> {self.book}"

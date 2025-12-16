@@ -3,7 +3,10 @@ from .views import (
     UserListCreateView,
     UserDetailView,
     BookListCreateView,
-    BookDetailView
+    BookDetailView,
+    CheckoutBookView,
+    ReturnBookView
+    
 )
 
 urlpatterns = [
@@ -12,4 +15,7 @@ urlpatterns = [
 
     path('books/', BookListCreateView.as_view(), name='book-list-create'),
     path('books/<int:pk>/', BookDetailView.as_view(), name='book-detail'),
+    
+    path('checkout/', CheckoutBookView.as_view(), name='checkout-book'),
+    path('return/', ReturnBookView.as_view(), name='return-book'),
 ]
