@@ -1,6 +1,7 @@
 from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.throttling import UserRateThrottle
 from django.contrib.auth.models import User
 from .models import Book, Checkout
 from .serializers import UserSerializer, BookSerializer, CheckoutSerializer
@@ -20,6 +21,7 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
 class BookListCreateView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+    throttle_classes = []
 
 
 class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
