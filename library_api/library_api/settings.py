@@ -7,7 +7,11 @@ SECRET_KEY = 'django-insecure-5r*lkt3#c_lxs-ern(er50(r@v46m1&74i9le5wf)q*hxmj6ed
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+'barack254.pythonanywhere.com',
+'localhost',
+'127.0.0.1',
+]
 
 SECURE_SSL_REDIRECT = False
 
@@ -30,15 +34,17 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend'
     ],
 
+REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.UserRateThrottle',
         'rest_framework.throttling.AnonRateThrottle',
     ],
-
     'DEFAULT_THROTTLE_RATES': {
-        'user': '100/day',
-        'anon': '20/day',
+        'user': '5000/day',
+        'anon': '2000/day',
     },
+}
+
 }
 
 
@@ -108,3 +114,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
